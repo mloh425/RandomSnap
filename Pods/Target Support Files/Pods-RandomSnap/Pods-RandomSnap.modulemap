@@ -1,0 +1,6 @@
+framework module Pods_RandomSnap {
+  umbrella header "Pods-RandomSnap-umbrella.h"
+
+  export *
+  module * { export * }
+}
