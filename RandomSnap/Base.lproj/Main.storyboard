@@ -1,69 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2G5-Pi-Pvi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fnf-ql-bbs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="be5-ZE-pbn">
+        <!--Camera View Controller-->
+        <scene sceneID="hm7-ob-UYC">
             <objects>
-                <viewController id="ebu-Xb-a4j" sceneMemberID="viewController">
+                <viewController title="Camera View Controller" id="Fnf-ql-bbs" customClass="CameraViewController" customModule="RandomSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YfU-uK-BUX"/>
-                        <viewControllerLayoutGuide type="bottom" id="YRF-gY-9hQ"/>
+                        <viewControllerLayoutGuide type="top" id="wgJ-QU-APj"/>
+                        <viewControllerLayoutGuide type="bottom" id="P7C-Zu-vtF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="i4s-OO-0dj">
+                    <view key="view" contentMode="scaleToFill" id="ZUb-5M-8KH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBT-jO-i9g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A8F-2E-v49">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rls-aD-86V">
+                                <rect key="frame" x="161" y="617" width="53" height="30"/>
+                                <state key="normal" title="Snap It!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTakePhotoButton:" destination="Fnf-ql-bbs" eventType="touchUpInside" id="Q7x-3N-aS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svr-sS-EpC">
+                                <rect key="frame" x="16" y="20" width="17" height="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTakeAnotherPhotoButton:" destination="Fnf-ql-bbs" eventType="touchUpInside" id="4rR-TE-Em9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A8F-2E-v49" firstAttribute="leading" secondItem="ZUb-5M-8KH" secondAttribute="leading" id="2Hg-e3-E6j"/>
+                            <constraint firstItem="Svr-sS-EpC" firstAttribute="top" secondItem="wgJ-QU-APj" secondAttribute="bottom" id="Ccy-ZB-qFM"/>
+                            <constraint firstItem="rls-aD-86V" firstAttribute="centerX" secondItem="ZUb-5M-8KH" secondAttribute="centerX" id="KkL-rW-tUP"/>
+                            <constraint firstItem="A8F-2E-v49" firstAttribute="top" secondItem="ZUb-5M-8KH" secondAttribute="topMargin" id="TI6-DY-g2r"/>
+                            <constraint firstItem="P7C-Zu-vtF" firstAttribute="top" secondItem="rls-aD-86V" secondAttribute="bottom" constant="20" id="VGL-lS-zYw"/>
+                            <constraint firstItem="Svr-sS-EpC" firstAttribute="leading" secondItem="ZUb-5M-8KH" secondAttribute="leadingMargin" id="ZE2-iM-KlC"/>
+                            <constraint firstItem="MBT-jO-i9g" firstAttribute="leading" secondItem="ZUb-5M-8KH" secondAttribute="leading" id="dfS-4u-Inc"/>
+                            <constraint firstAttribute="trailing" secondItem="A8F-2E-v49" secondAttribute="trailing" id="i8o-6h-Ina"/>
+                            <constraint firstItem="P7C-Zu-vtF" firstAttribute="top" secondItem="A8F-2E-v49" secondAttribute="bottom" id="kOw-nP-ar3"/>
+                            <constraint firstItem="MBT-jO-i9g" firstAttribute="top" secondItem="ZUb-5M-8KH" secondAttribute="top" id="nOy-ML-Oem"/>
+                            <constraint firstItem="P7C-Zu-vtF" firstAttribute="top" secondItem="MBT-jO-i9g" secondAttribute="bottom" id="pXm-iM-F8o"/>
+                            <constraint firstAttribute="trailing" secondItem="MBT-jO-i9g" secondAttribute="trailing" id="qpa-0w-b1u"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="diP-Te-Tkt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6d-iU-kNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-740" y="-348"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="OjV-uz-vH2">
-            <objects>
-                <viewController id="Smt-vU-iTy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oDc-Cy-6sH"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wvd-fe-okQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DVu-WH-rOZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="fbU-Lh-kyU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6eG-Ci-icb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-740" y="-1002"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="RJ8-HH-Bdj">
-            <objects>
-                <tabBarController id="2G5-Pi-Pvi" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="fAe-p7-w7g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                    <navigationItem key="navigationItem" id="kuc-h5-seM"/>
                     <connections>
-                        <segue destination="Smt-vU-iTy" kind="relationship" relationship="viewControllers" id="Muk-7F-NT9"/>
-                        <segue destination="ebu-Xb-a4j" kind="relationship" relationship="viewControllers" id="uPg-eg-aaD"/>
+                        <outlet property="cameraView" destination="MBT-jO-i9g" id="DG4-Gn-eah"/>
+                        <outlet property="didPressTakeAnotherPhotoButton" destination="Svr-sS-EpC" id="RHB-yx-EMP"/>
+                        <outlet property="didPressTakePhotoButton" destination="rls-aD-86V" id="X1y-6C-Fg4"/>
+                        <outlet property="tempImageView" destination="A8F-2E-v49" id="htg-gi-M9v"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AI7-ql-gfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DfX-fP-Vaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1694" y="-675"/>
+            <point key="canvasLocation" x="178.40000000000001" y="380.95952023988008"/>
         </scene>
     </scenes>
 </document>
